@@ -18,7 +18,7 @@ import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2023-06-30T15:11:33.432082584Z[GMT]")
 
 
-public class RankingDefaultResponse  implements InlineResponse200 {
+public class RankingDefaultResponse  {
   @JsonProperty("Type")
   private String type = null;
 
