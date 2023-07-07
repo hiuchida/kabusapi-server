@@ -34,6 +34,15 @@ mvn spring-boot:run
 You can view the api documentation in swagger-ui by pointing to 
 http://localhost:18080/kabusapi/swagger-ui/
 
+## Restrictions
+
+The following servers use the same port number (18080) and cannot run at the same time.
+
+- https://github.com/hiuchida/kabusapi-server
+  (kabusapi-server\src\main\resources\application.properties: server.port=18080)
+- https://github.com/hiuchida/kabusapi-wsserver
+  (kabusapi-wsserver\pom.xml: &lt;port>18080&lt;/port>)
+
 ## The differences from the original source
 
 ### Change InlineResponse200 to RankingDefaultResponse in Ranking API
