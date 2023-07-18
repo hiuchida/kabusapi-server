@@ -3,7 +3,7 @@ Duplicate spring-server-generated in kabusapi_swagger so that a minimum of autom
 
 ## Requirements
 
-Building the WebSocket application requires:
+Building the API server application requires:
 1. Java 1.7+
 2. Maven
 
