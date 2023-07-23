@@ -5,7 +5,7 @@
     <artifactId>kabusapi-server</artifactId>
     <packaging>jar</packaging>
     <name>kabusapi-server</name>
-    <version>5.19.1</version>
+    <version>5.21.0</version>
     <url>https://github.com/hiuchida/kabusapi-server</url>
     <description>kabusapi-server</description>
     <properties>
