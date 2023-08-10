@@ -37,7 +37,7 @@ public class ApiSoftLimitResponse   {
   @JsonProperty("MiniOption")
   private Double miniOption = null;
 
-  @JsonProperty("KabuSVersion")
+  @JsonProperty("kabuSVersion")
   private String kabuSVersion = null;
 
   public ApiSoftLimitResponse stock(Double stock) {
