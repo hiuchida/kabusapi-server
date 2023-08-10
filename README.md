@@ -31,6 +31,17 @@ Start your server as an simple java application.
 mvn spring-boot:run
 ```
 
+For Windows, run the batch file to suppress the following message when Ctrl+C is pressed.
+
+```shell
+run.bat
+```
+
+```
+バッチ ジョブを終了しますか (Y/N)?
+Terminate batch job (Y/N)?
+```
+
 You can view the api documentation in swagger-ui by pointing to 
 http://localhost:18080/kabusapi/swagger-ui/
 
@@ -44,6 +55,22 @@ The following servers use the same port number (18080) and cannot run at the sam
   (kabusapi-wsserver\pom.xml: &lt;port>18080&lt;/port>)
 
 ## The differences from the original source
+
+### Change SerializedName from KabuSVersion to kabuSVersion in ApiSoftLimitResponse
+
+Change SerializedName KabuSVersion in ApiSoftLimitResponse.
+
+The expected JSON data is...
+
+```json
+{"KabuSVersion":"5.21.0.0"}
+```
+
+The actual JSON data is...
+
+```json
+{"kabuSVersion":"5.21.0.0"}
+```
 
 ### Change InlineResponse200 to RankingDefaultResponse in Ranking API
 
