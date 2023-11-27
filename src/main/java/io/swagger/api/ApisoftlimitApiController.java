@@ -33,7 +33,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2023-11-12T11:41:23.269770450Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2023-11-26T21:56:11.148012911Z[GMT]")
 @RestController
 public class ApisoftlimitApiController implements ApisoftlimitApi {
 
@@ -49,11 +49,12 @@ public class ApisoftlimitApiController implements ApisoftlimitApi {
         this.request = request;
     }
 
-    public ResponseEntity<ApiSoftLimitResponse> apisoftlimitGet(@Parameter(in = ParameterIn.HEADER, description = "トークン発行メソッドで取得した文字列" ,required=true,schema=@Schema()) @RequestHeader(value="X-API-KEY", required=true) String X_API_KEY) {
+    public ResponseEntity<ApiSoftLimitResponse> apisoftlimitGet(@Parameter(in = ParameterIn.HEADER, description = "トークン発行メソッドで取得した文字列" ,required=true,schema=@Schema()) @RequestHeader(value="X-API-KEY", required=true) String X_API_KEY
+) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<ApiSoftLimitResponse>(objectMapper.readValue("{\n  \"Stock\" : 200,\n  \"Margin\" : 200,\n  \"Future\" : 10,\n  \"FutureMini\" : 100,\n  \"FutureMicro\" : 1000,\n  \"Option\" : 20,\n  \"MiniOption\" : 200,\n  \"kabuSVersion\" : \"5.22.0.0\"\n}", ApiSoftLimitResponse.class), HttpStatus.OK);
+                return new ResponseEntity<ApiSoftLimitResponse>(objectMapper.readValue("{\n  \"Stock\" : 200,\n  \"Margin\" : 200,\n  \"Future\" : 10,\n  \"FutureMini\" : 100,\n  \"FutureMicro\" : 1000,\n  \"Option\" : 20,\n  \"MiniOption\" : 200,\n  \"kabuSVersion\" : \"5.23.0.0\"\n}", ApiSoftLimitResponse.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<ApiSoftLimitResponse>(HttpStatus.INTERNAL_SERVER_ERROR);
