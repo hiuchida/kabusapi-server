@@ -5,7 +5,7 @@ Duplicate spring-server-generated in kabusapi_swagger so that a minimum of autom
 
 Building the API server application requires:
 1. Java 1.7+
-2. Maven
+2. Maven 3.8.x+
 
 ## Installation
 
