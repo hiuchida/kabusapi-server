@@ -20,9 +20,6 @@ import javax.validation.constraints.*;
 
 
 public class RequestSendOrderDerivFuture   {
-  @JsonProperty("Password")
-  private String password = null;
-
   @JsonProperty("Symbol")
   private String symbol = null;
 
@@ -59,26 +56,6 @@ public class RequestSendOrderDerivFuture   {
 
   @JsonProperty("ReverseLimitOrder")
   private RequestSendOrderDerivFutureReverseLimitOrder reverseLimitOrder = null;
-
-  public RequestSendOrderDerivFuture password(String password) {
-    this.password = password;
-    return this;
-  }
-
-  /**
-   * 注文パスワード
-   * @return password
-   **/
-  @Schema(example = "xxxxxx", required = true, description = "注文パスワード")
-      @NotNull
-
-    public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
 
   public RequestSendOrderDerivFuture symbol(String symbol) {
     this.symbol = symbol;
@@ -336,8 +313,7 @@ public class RequestSendOrderDerivFuture   {
       return false;
     }
     RequestSendOrderDerivFuture requestSendOrderDerivFuture = (RequestSendOrderDerivFuture) o;
-    return Objects.equals(this.password, requestSendOrderDerivFuture.password) &&
-        Objects.equals(this.symbol, requestSendOrderDerivFuture.symbol) &&
+    return Objects.equals(this.symbol, requestSendOrderDerivFuture.symbol) &&
         Objects.equals(this.exchange, requestSendOrderDerivFuture.exchange) &&
         Objects.equals(this.tradeType, requestSendOrderDerivFuture.tradeType) &&
         Objects.equals(this.timeInForce, requestSendOrderDerivFuture.timeInForce) &&
@@ -353,7 +329,7 @@ public class RequestSendOrderDerivFuture   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(password, symbol, exchange, tradeType, timeInForce, side, qty, closePositionOrder, closePositions, frontOrderType, price, expireDay, reverseLimitOrder);
+    return Objects.hash(symbol, exchange, tradeType, timeInForce, side, qty, closePositionOrder, closePositions, frontOrderType, price, expireDay, reverseLimitOrder);
   }
 
   @Override
@@ -361,7 +337,6 @@ public class RequestSendOrderDerivFuture   {
     StringBuilder sb = new StringBuilder();
     sb.append("class RequestSendOrderDerivFuture {\n");
     
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
     sb.append("    exchange: ").append(toIndentedString(exchange)).append("\n");
     sb.append("    tradeType: ").append(toIndentedString(tradeType)).append("\n");

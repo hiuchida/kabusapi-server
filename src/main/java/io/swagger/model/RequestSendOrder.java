@@ -20,9 +20,6 @@ import javax.validation.constraints.*;
 
 
 public class RequestSendOrder   {
-  @JsonProperty("Password")
-  private String password = null;
-
   @JsonProperty("Symbol")
   private String symbol = null;
 
@@ -74,26 +71,6 @@ public class RequestSendOrder   {
 
   @JsonProperty("ReverseLimitOrder")
   private RequestSendOrderReverseLimitOrder reverseLimitOrder = null;
-
-  public RequestSendOrder password(String password) {
-    this.password = password;
-    return this;
-  }
-
-  /**
-   * 注文パスワード
-   * @return password
-   **/
-  @Schema(required = true, description = "注文パスワード")
-      @NotNull
-
-    public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
 
   public RequestSendOrder symbol(String symbol) {
     this.symbol = symbol;
@@ -448,8 +425,7 @@ public class RequestSendOrder   {
       return false;
     }
     RequestSendOrder requestSendOrder = (RequestSendOrder) o;
-    return Objects.equals(this.password, requestSendOrder.password) &&
-        Objects.equals(this.symbol, requestSendOrder.symbol) &&
+    return Objects.equals(this.symbol, requestSendOrder.symbol) &&
         Objects.equals(this.exchange, requestSendOrder.exchange) &&
         Objects.equals(this.securityType, requestSendOrder.securityType) &&
         Objects.equals(this.side, requestSendOrder.side) &&
@@ -470,7 +446,7 @@ public class RequestSendOrder   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(password, symbol, exchange, securityType, side, cashMargin, marginTradeType, marginPremiumUnit, delivType, fundType, accountType, qty, closePositionOrder, closePositions, frontOrderType, price, expireDay, reverseLimitOrder);
+    return Objects.hash(symbol, exchange, securityType, side, cashMargin, marginTradeType, marginPremiumUnit, delivType, fundType, accountType, qty, closePositionOrder, closePositions, frontOrderType, price, expireDay, reverseLimitOrder);
   }
 
   @Override
@@ -478,7 +454,6 @@ public class RequestSendOrder   {
     StringBuilder sb = new StringBuilder();
     sb.append("class RequestSendOrder {\n");
     
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
     sb.append("    exchange: ").append(toIndentedString(exchange)).append("\n");
     sb.append("    securityType: ").append(toIndentedString(securityType)).append("\n");

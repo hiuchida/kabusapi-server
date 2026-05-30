@@ -19,9 +19,6 @@ public class RequestCancelOrder   {
   @JsonProperty("OrderId")
   private String orderId = null;
 
-  @JsonProperty("Password")
-  private String password = null;
-
   public RequestCancelOrder orderId(String orderId) {
     this.orderId = orderId;
     return this;
@@ -42,27 +39,6 @@ public class RequestCancelOrder   {
     this.orderId = orderId;
   }
 
-  public RequestCancelOrder password(String password) {
-    this.password = password;
-    return this;
-  }
-
-  /**
-   * 注文パスワード
-   * @return password
-   **/
-  @Schema(example = "xxxxxx", required = true, description = "注文パスワード")
-      @NotNull
-
-    public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -72,13 +48,12 @@ public class RequestCancelOrder   {
       return false;
     }
     RequestCancelOrder requestCancelOrder = (RequestCancelOrder) o;
-    return Objects.equals(this.orderId, requestCancelOrder.orderId) &&
-        Objects.equals(this.password, requestCancelOrder.password);
+    return Objects.equals(this.orderId, requestCancelOrder.orderId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(orderId, password);
+    return Objects.hash(orderId);
   }
 
   @Override
@@ -87,7 +62,6 @@ public class RequestCancelOrder   {
     sb.append("class RequestCancelOrder {\n");
     
     sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("}");
     return sb.toString();
   }
